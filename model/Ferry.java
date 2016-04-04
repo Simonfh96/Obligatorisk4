@@ -8,13 +8,12 @@ package model;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-
-
 /**
  *
  * @author Simon
  */
 public class Ferry {
+
     ArrayList<Vehicle> left = new ArrayList<>();
     LinkedList<Vehicle> right = new LinkedList<>();
     private int spacesLeft = 100;
@@ -22,39 +21,30 @@ public class Ferry {
 
     public Ferry(int spaces) {
     }
-    
-    public void addVehicleLeft(Vehicle vehicle){
+
+    public void addVehicleLeft(Vehicle vehicle) {
         left.add(vehicle);
     }
-    
-     public void addVehicleRight(Vehicle vehicle){
+
+    public void addVehicleRight(Vehicle vehicle) {
         right.add(vehicle);
     }
 
     public int getSpacesLeft() {
         {
-           
+
         }
-                
+
         return spacesLeft;
     }
 
     public int getSpacesRight() {
         return spacesRight;
+
     }
-    
-    public int getLoadLeft(){
-        
-            
-        }
+
+    public void clear() {
+        left.clear();
+        right.clear();
     }
-}
-    
-     
-    
-     
-    
-    
-    
-    
 }
