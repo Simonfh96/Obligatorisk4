@@ -48,7 +48,7 @@ public class vehicleFactory {
                         Truck truck = new Truck(truckWeight, truckLoadSpace, truckLoadWeight);
                         result = truck;
                     }
-
+ 
                 }
 
             }

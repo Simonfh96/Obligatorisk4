@@ -36,8 +36,7 @@ public abstract class Vehicle implements Comparable {
         return v.getLoadPerSpace() - getLoadPerSpace();
     }
 
-    public int getVehicleWeight() {
-        return vehicleWeight;
-    }
+    
+    
 
 }

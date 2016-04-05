@@ -21,7 +21,7 @@ public class Truck extends Vehicle {
 
     @Override
     public int getLoad() {
-        int truckLoad = getVehicleWeight() + loadSpace;
+        int truckLoad = getLoad()+ loadSpace;
 
         return truckLoad;
     }

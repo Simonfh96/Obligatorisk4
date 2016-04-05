@@ -20,7 +20,7 @@ public class Car extends Vehicle {
     }
 
     public int getLoad() {
-        return super.getVehicleWeight();
+        return super.getLoad();
     }
 
     public String toString() {
