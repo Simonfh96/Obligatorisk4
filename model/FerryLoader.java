@@ -12,11 +12,15 @@ import java.util.ArrayList;
  * @author Simon
  */
 public class FerryLoader {
+
     ArrayList<Vehicle> vehicleQueue = new ArrayList<>();
-    
-    
-    public void addVehicle(Vehicle vehicle){
+
+    public void addVehicle(Vehicle vehicle) {
         vehicleQueue.add(vehicle);
     }
-    
+
+    public void clearQueue() {
+        vehicleQueue.clear();
+    }
+
 }
