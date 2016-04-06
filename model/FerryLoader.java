@@ -23,4 +23,21 @@ public class FerryLoader {
         vehicleQueue.clear();
     }
 
-}
+    
+    public void loadFerry(Ferry ferry){
+       Vehicle x;
+       Ferry f = new Ferry(100) ;
+        for (int i = 0; i < 125; i++) {
+            vehicleQueue.get(i+2).compareTo(vehicleQueue.get(i).getLoadPerSpace());
+            x = vehicleQueue.remove(i);
+            f.addVehicleLeft(x);
+            
+          
+            
+        }
+        }
+            
+            
+    }
+    
+

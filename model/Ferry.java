@@ -6,7 +6,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  *
@@ -15,7 +14,7 @@ import java.util.LinkedList;
 public class Ferry {
 
     ArrayList<Vehicle> left = new ArrayList<>();
-    LinkedList<Vehicle> right = new LinkedList<>();
+    ArrayList<Vehicle> right = new ArrayList<>();
     private int spaces;
 
     public Ferry(int spaces) {
@@ -70,11 +69,11 @@ public class Ferry {
         int balance;
         if (getLoadLeft() < getLoadRight()) {
             balance = getLoadLeft() - getLoadRight();
-            balanceStr = "there is: " + balance + "kg in the left side";
+            balanceStr = "there is: " + balance + "kg more in the left side";
             result = balanceStr;
         } else {
             balance = getLoadRight() - getLoadLeft();
-            balanceStr = "there is: " + balance + "kg in the right side";
+            balanceStr = "there is: " + balance + "kg more in the right side";
             result = balanceStr;
         }
         return result;
@@ -96,7 +95,7 @@ public class Ferry {
         }
         fullWeight = fullWeight1 + fullWeight2;
 
-        ferry = "number of vehicles on the ferry: " + allVehicles + "\n number of empty spaces: " + emptySpaces + "total weight of all vehicles: " + fullWeight + " balance: " + getBalance();
+        ferry = " Number of vehicles on the ferry: " + allVehicles + "\n Number of empty spaces: " + emptySpaces + "\n Total weight of all vehicles: " + fullWeight + "\n Balance: " + getBalance();
         return ferry;
     }
 
