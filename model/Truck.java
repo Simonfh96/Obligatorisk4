@@ -16,6 +16,8 @@ public class Truck extends Vehicle {
 
     public Truck(int vehicleWeight, int loadSpace, int loadWeight) {
         super(vehicleWeight);
+        this.loadSpace = loadSpace;
+        this.loadWeight = loadWeight;
 
     }
 

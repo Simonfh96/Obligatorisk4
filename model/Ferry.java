@@ -33,8 +33,8 @@ public class Ferry {
         int spaceLeft = 0;
         for (int i = 0; i < left.size(); i++) {
             spaceLeft = spaceLeft + left.get(i).getSpace();
-            spaceLeft = spaces - spaceLeft;
         }
+        spaceLeft = spaces - spaceLeft;
         return spaceLeft;
     }
 
@@ -42,8 +42,8 @@ public class Ferry {
         int spaceRight = 0;
         for (int i = 0; i < right.size(); i++) {
             spaceRight = spaceRight + left.get(i).getSpace();
-            spaceRight = spaces - spaceRight;
         }
+        spaceRight = spaces - spaceRight;
         return spaceRight;
     }
 
@@ -63,18 +63,16 @@ public class Ferry {
         return loadRight;
     }
 
-    public String getBalance() {
-        String result = new String();
-        String balanceStr;
+    public int getBalance() {
+        int result = 0; 
+        
         int balance;
         if (getLoadLeft() < getLoadRight()) {
             balance = getLoadLeft() - getLoadRight();
-            balanceStr = "there is: " + balance + "kg more in the left side";
-            result = balanceStr;
+            result = balance;
         } else {
             balance = getLoadRight() - getLoadLeft();
-            balanceStr = "there is: " + balance + "kg more in the right side";
-            result = balanceStr;
+            result = balance;
         }
         return result;
 
@@ -84,18 +82,8 @@ public class Ferry {
         String ferry = new String();
         int allVehicles = left.size() + right.size();
         int emptySpaces = getSpacesLeft() + getSpacesRight();
-        int fullWeight = 0;
-        int fullWeight1 = 0;
-        int fullWeight2 = 0;
-        for (int i = 0; i < left.size(); i++) {
-            fullWeight1 = fullWeight1 + left.get(i).getLoad();
-        }
-        for (int i = 0; i < right.size(); i++) {
-            fullWeight2 = fullWeight2 + right.get(i).getLoad();
-        }
-        fullWeight = fullWeight1 + fullWeight2;
 
-        ferry = " Number of vehicles on the ferry: " + allVehicles + "\n Number of empty spaces: " + emptySpaces + "\n Total weight of all vehicles: " + fullWeight + "\n Balance: " + getBalance();
+        ferry = " Number of vehicles on the ferry: " + allVehicles + "\n Number of empty spaces: " + emptySpaces + "\n Total weight of all vehicles: " + (getLoadLeft()+getLoadRight()) + "\n Balance: " + getBalance();
         return ferry;
     }
 
@@ -104,7 +92,7 @@ public class Ferry {
         String leftWeight = new String();
         String leftSpace = new String();
         for (int i = 0; i < left.size(); i++) {
-            showLeftStr = left.get(i).toString() + "\n";
+            showLeftStr = showLeftStr + left.get(i).toString() + "\n";
         }
         for (int i = 0; i < left.size(); i++) {
             leftWeight = "total weight in left side: "+left.get(i).getLoad();
@@ -123,7 +111,7 @@ public class Ferry {
         String rightWeight = new String();
         String rightSpace = new String();
         for (int i = 0; i < right.size(); i++) {
-            showRightStr = right.get(i).toString() + "\n";
+            showRightStr = showRightStr + right.get(i).toString() + "\n";
         }
         for (int i = 0; i < right.size(); i++) {
             rightWeight = right.get(i).getLoad() + "";
@@ -136,7 +124,7 @@ public class Ferry {
 
     }
 
-    public void clearQueue() {
+    public void clear() {
         left.clear();
         right.clear();
     }
